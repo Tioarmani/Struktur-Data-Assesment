@@ -221,8 +221,6 @@ Program ini mendemonstrasikan dua teknik berbeda untuk menukar nilai antar array
 
 
 ## Kesimpulan
-Berikut adalah kesimpulan ringkas dan sistematis yang dapat Anda gunakan untuk modul:
-
 Kesimpulan Pemrograman C++
 Seluruh implementasi kode ini menunjukkan integrasi fundamental pemrograman C++ yang berfokus pada tiga aspek utama: Pengelolaan Data, Efisiensi Memori, dan Modularitas. Penggunaan Struct dan Array multidimensi memungkinkan penyimpanan data yang kompleks secara terorganisir, sementara penerapan Pointer dan Reference memberikan kontrol penuh terhadap manipulasi data langsung pada alamat memori untuk performa yang lebih optimal.
 Selain itu, penerapan konsep Abstract Data Type (ADT) dengan memisahkan berkas menjadi header (.h) dan body (.cpp) membuktikan standar penulisan kode yang profesional. Pendekatan ini memisahkan antara antarmuka dan implementasi, sehingga program menjadi lebih mudah dirawat (maintainable), dapat digunakan kembali (reusable), dan memiliki alur logika yang lebih bersih melalui penggunaan fungsi-fungsi khusus.
