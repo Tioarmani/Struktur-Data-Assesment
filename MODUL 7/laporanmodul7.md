@@ -1,16 +1,14 @@
 # <h1 align="center">Laporan Praktikum Modul 7 - Stack</h1>
-<p align="center">Bayu Wandana - 103112430159</p>
+<p align="center">Tio Armani - 103112430225</p>
 
 ## Dasar Teori
-Definisi Stack Stack merupakan struktur data linear yang beroperasi dengan mekanisme khusus, yakni seluruh aktivitas manipulasi data—baik penyisipan maupun pengambilan—dibatasi hanya pada satu gerbang akses yang disebut puncak (top). Mengacu pada kaidah LIFO (Last In, First Out), objek yang paling akhir diinput ke dalam sistem akan menjadi yang pertama kali dikeluarkan. Logika ini identik dengan tumpukan barang di kehidupan sehari-hari, di mana data bagian bawah terkunci dan baru bisa dijangkau setelah elemen-elemen di atasnya dilepaskan satu per satu.
+Stack atau tumpukan merupakan sebuah model struktur data linear yang bekerja dengan prinsip satu pintu akses tunggal yang dikenal sebagai Top (puncak). Struktur ini menerapkan aturan LIFO (Last In, First Out), yang berarti elemen data yang terakhir kali dimasukkan akan menjadi data yang pertama kali diproses atau dikeluarkan. Secara logis, sistem ini bekerja layaknya tumpukan benda di dunia nyata, di mana elemen yang berada di posisi paling bawah hanya dapat diakses setelah seluruh elemen di atasnya disingkirkan secara berurutan.
 
-A. Materi Sesi Perkuliahan 7
+A. Operasi Fundamental pada Arsitektur Stack Dalam perancangan arsitektur Stack, terdapat dua operasi utama yang menjadi fondasi pengolahan data, yaitu prosedur penambahan dan pengambilan elemen.
 
-Pada modul ke-7, fokus utama adalah perancangan arsitektur Stack yang mengintegrasikan dua operasi fundamental, yaitu prosedur push untuk menyisipkan data dan pop untuk mengeluarkan data.
+1. Operasi Push (Penyisipan) Instruksi Push digunakan untuk menaruh atau menyisipkan data baru pada posisi puncak tumpukan. Namun, sebelum data ditambahkan, sistem akan melakukan pengecekan kapasitas; jika ruang penyimpanan sudah mencapai batas maksimum, maka perintah akan dibatalkan untuk menghindari kegagalan sistem yang disebut sebagai Overflow.
 
-1. Push Instruksi ini berperan dalam menyisipkan elemen baru tepat di posisi tertinggi tumpukan. Kendati demikian, eksekusi push akan tertolak secara otomatis jika ruang penyimpanan telah melampaui ambang batas atau kapasitas penuh (kondisi overflow).
-
-2. Pop Fungsi ini digunakan untuk mendeteksi, mengambil, sekaligus melenyapkan elemen yang berada di kasta teratas tumpukan. Operasi ini bersifat kondisional, di mana proses hanya dapat berjalan jika tumpukan tidak dalam keadaan hampa; jika dipaksakan menghapus pada tumpukan kosong, sistem akan mengalami kegagalan fungsi yang dikenal sebagai underflow.
+2. Operasi Pop (Pengambilan) Fungsi Pop bertugas untuk mengidentifikasi sekaligus menghapus elemen yang saat itu berada di posisi teratas. Operasi ini hanya dapat dieksekusi apabila tumpukan berisi data. Jika sistem diperintahkan untuk menghapus elemen pada kondisi tumpukan yang benar-benar hampa, maka akan terjadi error atau kegagalan fungsi yang dikenal dengan istilah Underflow.
 ## Guided 1
 
 ### . [stack menggunakan linked list] 
@@ -225,7 +223,7 @@ int main(){
 }
    
 ```
-Kode program ini secara komprehensif mengimplementasikan struktur data Stack menggunakan pendekatan Linked List dinamis, di mana sistem bekerja berdasarkan prinsip LIFO (Last In, First Out) yang memastikan bahwa setiap penambahan data melalui fungsi push dan penghapusan melalui fungsi pop hanya berfokus pada titik akses utama yaitu pointer top, sembari tetap menyediakan fleksibilitas tambahan untuk melakukan pencarian serta pembaruan nilai data pada posisi tertentu melalui mekanisme penelusuran (traversal) dari puncak hingga dasar tumpukan.
+Program ini mengimplementasikan struktur data Stack yang bekerja dengan prinsip LIFO (Last In, First Out). Penggunaan Linked List sebagai basisnya membuat ukuran tumpukan menjadi dinamis (tidak terbatas kapasitas array), di mana penambahan dan pengambilan data selalu dilakukan melalui satu pintu akses saja, yaitu pointer Top.
 
 
 ## Guided 1
@@ -409,9 +407,7 @@ int main(){
 }
 
 ```
-Kode program tersebut merupakan implementasi struktur data Stack menggunakan Array statis dengan kapasitas terbatas sebanyak 10 elemen, di mana pengelolaan seluruh datanya dikendalikan oleh variabel top yang berfungsi sebagai penanda indeks posisi elemen paling atas.
-Secara operasional, program ini menerapkan prinsip LIFO (Last In First Out) melalui fungsi push yang akan menaikkan nilai top saat data ditambah dan fungsi pop yang akan menurunkan nilai top saat data dihapus, dengan tambahan fitur validasi untuk mendeteksi kondisi Stack Penuh (overflow) maupun Stack Kosong (underflow).
-Selain operasi dasar tersebut, kode ini memiliki kecerdasan dalam mengakses data secara spesifik melalui fungsi update dan searchData yang menggunakan perhitungan indeks mundur untuk memproses elemen berdasarkan urutan posisinya dari atas ke bawah.
+Berbeda dengan implementasi berbasis linked list, program ini menggunakan array dengan kapasitas tetap (MAX = 10). Struktur ini dikelola oleh satu variabel penunjuk bernama top. Variabel top berfungsi sebagai indeks penanda posisi elemen terakhir yang dimasukkan. Jika top bernilai -1, itu berarti tumpukan benar-benar kosong.
 ## Unguided
 
 ## Soal 1
@@ -538,10 +534,9 @@ int main() {
 
 ```
 ### Output soal 1 :
-![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/9748b4e698e991a84b68d66544c725593c5407ce/MODUL%207/hasil%20foto/Screenshot%202025-12-30%20002218.png)
+![Screenshot Output 1](https://github.com/Tioarmani/Struktur-Data-Assesment/blob/76edc83227d26b69fda3a7cf30869c2da88fcc89/MODUL%207/hasil%20output/Screenshot%202025-12-30%20161858.png)
 
-Kode program ini merupakan implementasi struktur data Stack menggunakan Array statis dengan kapasitas maksimal 20 elemen, yang beroperasi berdasarkan prinsip LIFO (Last In First Out) di mana penambahan data melalui fungsi push dan pengambilan data melalui fungsi pop sepenuhnya dikendalikan oleh variabel top sebagai penanda indeks puncak.
-Keunikan dari kode ini terletak pada fungsi balikStack, sebuah prosedur yang secara fisik membalikkan urutan elemen di dalam memori array menggunakan teknik two-pointer swapping (menukar elemen indeks awal dengan indeks akhir secara bergantian), sehingga elemen yang sebelumnya berada di dasar tumpukan berpindah menjadi elemen teratas tanpa memerlukan struktur data bantuan lainnya.
+Program ini mengimplementasikan struktur data Stack atau tumpukan menggunakan media Array statis dengan kapasitas maksimal 20 elemen. Prinsip utama yang digunakan adalah LIFO (Last In, First Out), di mana data yang terakhir kali dimasukkan akan menjadi data pertama yang diproses, dengan variabel top sebagai satu-satunya pintu kendali untuk melacak posisi elemen paling atas.
 
 ### soal 2. 
 
@@ -680,10 +675,9 @@ int main() {
 
 ```
 ### Output soal 2 :
-![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/5bf4c91dab2a69bb3bebe8e85bd6259123d1a41d/MODUL%207/hasil%20foto/Screenshot%202025-12-30%20001648.png)
+![Screenshot Output 2](https://github.com/Tioarmani/Struktur-Data-Assesment/blob/76edc83227d26b69fda3a7cf30869c2da88fcc89/MODUL%207/hasil%20output/Screenshot%202025-12-30%20162004.png)
 
-Kode program ini merupakan pengembangan dari implementasi Stack berbasis Array statis sebelumnya, yang kini dilengkapi dengan fitur cerdas pushAscending untuk menjaga agar data di dalam tumpukan selalu terurut dari nilai terkecil di dasar hingga nilai terbesar di puncak.
-
+Program ini menggunakan struktur data Stack yang bekerja dengan prinsip LIFO (Last In, First Out), di mana data yang terakhir masuk akan menjadi yang pertama kali keluar. Bayangkan seperti tumpukan piring; Anda menaruh piring di atas dan mengambilnya pun dari paling atas. Kendali utama tumpukan ini ada pada variabel Top yang berfungsi sebagai penanda posisi elemen tertinggi.
 ### soal 3.
 ### stack.h
 ```C++
@@ -829,16 +823,17 @@ int main() {
 
 ```
 ### Output soal 3:
-![Screenshot Output 2](https://github.com/Bayuwandana/Struktur-Data-Assignment/blob/f66078fc2a30647d5e246c7d0e237b454b0cfd9b/MODUL%207/hasil%20foto/Screenshot%202025-12-30%20003037.png)
+![Screenshot Output 2](https://github.com/Tioarmani/Struktur-Data-Assesment/blob/76edc83227d26b69fda3a7cf30869c2da88fcc89/MODUL%207/hasil%20output/Screenshot%202025-12-30%20162037.png)
 
-
-Kode ini mengimplementasikan Stack berbasis Array yang mampu membaca input angka secara langsung dari pengguna, menyimpannya dengan aturan LIFO, dan memiliki kemampuan untuk membalikkan urutan data secara fisik di dalam memori array.
+Program ini menggunakan konsep Stack atau tumpukan yang diimplementasikan melalui Array statis berkapasitas 20 elemen. Logika utamanya mengikuti prinsip LIFO (Last In, First Out), di mana setiap manipulasi data dipusatkan pada posisi paling atas yang dikendalikan oleh variabel top. Saat tumpukan kosong, variabel top bernilai -1, dan akan terus bertambah seiring masuknya data baru.
 
 ### Kesimpulan
-Program ini merupakan model Stack yang komprehensif karena tidak hanya menjalankan fungsi standar LIFO (Last In First Out), tetapi juga mengintegrasikan fungsi filtering untuk hanya menerima input bertipe numerik, fungsi sorting otomatis melalui penggunaan tumpukan sementara (temporary stack), dan fungsi reversal fisik menggunakan algoritma two-pointer swapping. Dengan kapasitas statis sebesar 20 elemen, kode ini sangat efektif untuk mendemonstrasikan bagaimana data dapat dimanipulasi di dalam memori array tanpa kehilangan integritas struktur tumpukannya.
+Kesimpulan dari ketiga kode tersebut adalah bahwa struktur data Stack dapat diimplementasikan baik menggunakan Linked List maupun Array dengan prinsip LIFO yang fleksibel, di mana program tidak hanya mampu melakukan operasi dasar tambah-kurang, tetapi juga dapat dikembangkan untuk fitur pengurutan otomatis, pembalikan urutan data, hingga pengolahan input stream secara interaktif.
 
 
 ## Referensi
 [1] GeeksforGeeks - Stack Data Structure: https://www.geeksforgeeks.org/stack-data-structure/
 
-[2]Sorting a Stack using a Temporary Stack: https://www.geeksforgeeks.org/sort-a-stack-using-a-temporary-stack/
+[2] Programiz - Stack Implementation: https://www.programiz.com/dsa/stack
+
+[3] Cplusplus.com - Stack Container: https://cplusplus.com/reference/stack/stack/
